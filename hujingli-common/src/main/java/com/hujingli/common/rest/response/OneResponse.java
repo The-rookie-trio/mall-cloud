@@ -13,6 +13,7 @@ public class OneResponse<T> extends BaseResponse {
      */
     private T t;
 
+
     public OneResponse(Integer status, String desc, T t) {
         super(status, desc);
         this.t = t;

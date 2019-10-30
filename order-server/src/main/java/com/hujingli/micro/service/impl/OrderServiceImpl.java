@@ -1,6 +1,7 @@
 package com.hujingli.micro.service.impl;
 
 import com.hujingli.micro.service.OrderService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "saveFallback")
     @Override
     public void save() {
 
@@ -36,5 +38,8 @@ public class OrderServiceImpl implements OrderService {
         HttpStatus statusCode = restTemplate.getForEntity(url, String.class).getStatusCode();
 
 
+    }
+
+    public void saveFallback(){
     }
 }

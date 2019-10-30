@@ -2,6 +2,7 @@ package com.hujingli.micro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 /**
  * @author exphuhong
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 可以不用添加该注解也可启动并作为eureka-client注册到注册中心
  * 自动装配的时候默认给@link{EurekaDiscoveryClientConfiguration}
  */
+@EnableCircuitBreaker
 public class OrderApplication {
 
     public static void main(String[] args) {

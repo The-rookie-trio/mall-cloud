@@ -12,6 +12,7 @@
         <module>eureka-server</module>
         <module>order-server</module>
         <module>stock-server</module>
+        <module>hujingli-common</module>
     </modules>
 
 

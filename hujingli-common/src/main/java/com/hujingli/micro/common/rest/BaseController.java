@@ -1,6 +1,6 @@
-package com.hujingli.common.rest;
+package com.hujingli.micro.common.rest;
 
-import com.hujingli.common.rest.response.BaseResponse;
+import com.hujingli.micro.common.rest.response.BaseResponse;
 import org.springframework.http.HttpStatus;
 
 /**

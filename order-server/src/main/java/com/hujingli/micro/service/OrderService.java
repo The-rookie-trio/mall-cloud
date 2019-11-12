@@ -1,5 +1,8 @@
 package com.hujingli.micro.service;
 
+import com.hujingli.micro.request.SaveOrderRequest;
+import com.hujingli.micro.response.SaveOrderVO;
+
 /**
  * @author exphuhong
  * @link{exphuhong@163.com}
@@ -8,5 +11,5 @@ package com.hujingli.micro.service;
  */
 public interface OrderService {
 
-    void save();
+    void save(SaveOrderRequest orderRequest);
 }

@@ -1,5 +1,7 @@
 package com.hujingli.micro.service;
 
+import com.hujingli.micro.request.MinusStockRequest;
+
 /**
  * @author exphuhong
  * @link{exphuhong@163.com}
@@ -8,5 +10,9 @@ package com.hujingli.micro.service;
  */
 public interface StockService {
 
-    void minusStock();
+    /**
+     * 扣减库存
+     * @param stockRequest 扣减库存请求参数
+     */
+    void minusStock(MinusStockRequest stockRequest);
 }

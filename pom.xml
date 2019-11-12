@@ -13,6 +13,7 @@
         <module>order-server</module>
         <module>stock-server</module>
         <module>hujingli-common</module>
+        <module>config-server</module>
     </modules>
 
 
@@ -44,6 +45,13 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.7.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
         </dependency>
 
     </dependencies>

@@ -9,10 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author exphuhong
@@ -44,6 +41,21 @@ public class StockController<T> extends BaseController {
         stockService.minusStock(stockRequest);
 
         return successUpdateBaseResponse();
+    }
+
+
+    @GetMapping("/testFeign")
+    public BaseResponse testFeign(){
+        logger.info("测试feign远程调用, 进入stock服务");
+
+        try {
+            // 延时测试服务降级
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return successSaveBaseResponse();
     }
 
 }

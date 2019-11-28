@@ -19,3 +19,12 @@ spring-cloud搭建微服务项目
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 </dependency>
 ```
+
+4、加入common模块提供一些基础组件，包含一些基础实体`BaseEntity` 包含一些
+基础的接口类`BaseCOntroller`
+
+
+5、加入路由zuul
+
+
+

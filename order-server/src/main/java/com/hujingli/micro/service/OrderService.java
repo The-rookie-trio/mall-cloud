@@ -1,5 +1,6 @@
 package com.hujingli.micro.service;
 
+import com.hujingli.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.request.SaveOrderRequest;
 import com.hujingli.micro.response.SaveOrderVO;
 
@@ -12,4 +13,6 @@ import com.hujingli.micro.response.SaveOrderVO;
 public interface OrderService {
 
     void save(SaveOrderRequest orderRequest);
+
+    BaseResponse testFeign();
 }

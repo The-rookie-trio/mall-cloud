@@ -1,10 +1,13 @@
 package com.hujingli.micro.service.impl;
 
+import com.hujingli.micro.command.StockServiceCommand;
 import com.hujingli.micro.common.bean.Order;
 import com.hujingli.micro.common.exception.HuJingLiException;
+import com.hujingli.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.dao.OrderRepository;
 import com.hujingli.micro.request.SaveOrderRequest;
 import com.hujingli.micro.service.OrderService;
+import com.hujingli.micro.service.StockServiceFeign;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +40,9 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private OrderRepository orderRepository;
 
+    @Resource
+    private StockServiceFeign stockServiceFeign;
+
     @HystrixCommand(fallbackMethod = "saveFallback")
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -58,9 +64,23 @@ public class OrderServiceImpl implements OrderService {
             throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "下单失败");
         }
 
-
-
     }
+
+    /**
+     * 使用feign来进行远程调用
+     */
+
+    @Override
+    public BaseResponse testFeign() {
+
+        logger.info("进入order服务，进行订单操作");
+
+        // 调用库存
+        return new StockServiceCommand(stockServiceFeign).execute();
+    }
+
+
+
 
     public void saveFallback(){
 

@@ -73,17 +73,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public BaseResponse testFeign() {
 
-        logger.info("进入order服务，进行订单操作");
+        logger.info("进入order服务的service，进行订单操作");
 
         // 调用库存
+
+        logger.info("调用库存服务");
         return new StockServiceCommand(stockServiceFeign).execute();
     }
 
 
 
 
-    public void saveFallback(){
+    public void saveFallback(SaveOrderRequest orderRequest, Throwable e){
 
-        throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "服务器异常");
+        throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
     }
 }

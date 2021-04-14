@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hujingli.micro</groupId>
-    <artifactId>hujingli-cloud</artifactId>
+    <artifactId>mall-cloud</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>

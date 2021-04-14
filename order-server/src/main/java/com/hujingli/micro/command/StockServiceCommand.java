@@ -1,12 +1,10 @@
 package com.hujingli.micro.command;
 
-import com.hujingli.micro.common.bean.Stock;
 import com.hujingli.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.service.StockServiceFeign;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 
 /**
  * @author exphuhong

@@ -18,5 +18,10 @@ public interface AuthConstant {
      */
     String PORTAL_CLIENT_ID = "portal-app";
 
+    /**
+     * 密钥
+     */
     String KEY_PAIR_PWD = "123456";
+
+    String ROLES_RESOURCE_MAP = "roles_resource_map";
 }

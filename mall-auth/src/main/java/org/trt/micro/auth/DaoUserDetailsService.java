@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
  * @author <a href="exphuhong@163.com">胡红</a>
  * @Date 2021 年 04 月 15 日
  * @Description 用户认证
- * @since
  */
 @Slf4j
 @Service
@@ -67,7 +66,7 @@ public class DaoUserDetailsService implements UserDetailsService {
             throw new BusinessException(HttpStatus.FORBIDDEN.value(), "登录用户账号不可用");
         }
         // 判断用户账号信息  是否被锁等
-
+        log.info("用户认证成功:[{}]", username);
         return userInfo;
     }
 

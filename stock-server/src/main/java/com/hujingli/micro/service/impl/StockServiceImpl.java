@@ -1,7 +1,7 @@
 package com.hujingli.micro.service.impl;
 
 import com.hujingli.micro.common.bean.Stock;
-import com.hujingli.micro.common.exception.HuJingLiException;
+import com.hujingli.micro.common.exception.BusinessException;
 import com.hujingli.micro.dao.StockRepository;
 import com.hujingli.micro.request.MinusStockRequest;
 import com.hujingli.micro.service.StockService;
@@ -46,6 +46,6 @@ public class StockServiceImpl implements StockService {
 
     public void minusFallback(){
         logger.debug("库存扣减服务容错保护触发，返回错误信息");
-        throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "服务器异常");
+        throw new BusinessException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "服务器异常");
     }
 }

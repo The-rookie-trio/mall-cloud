@@ -2,7 +2,7 @@ package com.hujingli.micro.service.impl;
 
 import com.hujingli.micro.command.StockServiceCommand;
 import com.hujingli.micro.common.bean.Order;
-import com.hujingli.micro.common.exception.HuJingLiException;
+import com.hujingli.micro.common.exception.BusinessException;
 import com.hujingli.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.dao.OrderRepository;
 import com.hujingli.micro.request.SaveOrderRequest;
@@ -61,7 +61,7 @@ public class OrderServiceImpl implements OrderService {
         HttpStatus statusCode = restTemplate.getForEntity(url, String.class).getStatusCode();
         if (statusCode != HttpStatus.OK) {
             logger.debug("库存扣减失败");
-            throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "下单失败");
+            throw new BusinessException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "下单失败");
         }
 
     }
@@ -86,6 +86,6 @@ public class OrderServiceImpl implements OrderService {
 
     public void saveFallback(SaveOrderRequest orderRequest, Throwable e){
 
-        throw new HuJingLiException(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
+        throw new BusinessException(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
     }
 }

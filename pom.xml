@@ -15,6 +15,7 @@
         <module>hujingli-common</module>
         <module>config-server</module>
         <module>hujingli-zuul</module>
+        <module>mall-auth</module>
     </modules>
 
 
@@ -24,7 +25,10 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
     </properties>
 
     <parent>
@@ -55,6 +59,8 @@
             <version>1.16.6</version>
         </dependency>
 
+
+
     </dependencies>
 
 
@@ -67,6 +73,35 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--spring cloud alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--集成SpringBoot Admin监控-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${admin-starter-server.version}</version>
+            </dependency>
+
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

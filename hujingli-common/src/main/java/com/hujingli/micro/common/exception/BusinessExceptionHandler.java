@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * 自定义通用异常处理类
  */
 @RestControllerAdvice
-public class HuJingLiExceptionHandler {
+public class BusinessExceptionHandler {
 
-    @ExceptionHandler(HuJingLiException.class)
-    public OneResponse handlerHuJingLiException(HuJingLiException e){
+    @ExceptionHandler(BusinessException.class)
+    public OneResponse handlerHuJingLiException(BusinessException e){
         return new OneResponse<>(e.getCode(), e.getdesc(), e.getData());
     }
 }

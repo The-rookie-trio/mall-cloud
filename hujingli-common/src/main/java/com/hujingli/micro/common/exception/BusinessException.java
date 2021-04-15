@@ -4,28 +4,28 @@ package com.hujingli.micro.common.exception;
  * @author exphuhong
  * @link{exphuhong@163.com} 通用异常类
  */
-public class HuJingLiException extends RuntimeException {
+public class BusinessException extends RuntimeException {
 
     private String desc;
     private int code = 500;
     private Object data;
 
-    public HuJingLiException(String desc) {
+    public BusinessException(String desc) {
         this.desc = desc;
     }
 
-    public HuJingLiException(int code, String desc) {
+    public BusinessException(int code, String desc) {
         this.desc = desc;
         this.code = code;
     }
 
-    public HuJingLiException(int code, String desc, Object data) {
+    public BusinessException(int code, String desc, Object data) {
         this.desc = desc;
         this.code = code;
         this.data = data;
     }
 
-    public HuJingLiException(int code, String desc, Throwable e) {
+    public BusinessException(int code, String desc, Throwable e) {
         super(desc, e);
         this.desc = desc;
         this.code = code;

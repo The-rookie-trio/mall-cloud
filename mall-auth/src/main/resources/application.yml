@@ -1,23 +1,28 @@
 server:
-    port: 9401
+    port: 10001
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.12.2.202:3306/mall?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: mall
+    password: pa2sw0rd
   profiles:
       active: dev
   application:
-      name: mall-auth
+      name: mall-auth
   cloud:
     nacos:
       discovery:
-          server-addr: http://1.116.200.39:8848
+          server-addr: http://1.116.200.39:8848
   jackson:
-      date-format: yyyy-MM-dd HH:mm:ss
+      date-format: yyyy-MM-dd HH:mm:ss
   redis:
-      database: 0
-      port: 6379
-      host: 39.108.149.230
-      password: 
+      database: 0
+      port: 6379
+      host: 39.108.149.230
+      password:  
 management:
   endpoints:
     web:
       exposure:
-          include: "*"
+          include: "*"

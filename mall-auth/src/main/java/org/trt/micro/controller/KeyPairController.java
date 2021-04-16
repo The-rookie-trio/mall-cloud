@@ -34,4 +34,9 @@ public class KeyPairController {
         return new JWKSet(key).toJSONObject();
     }
 
+
+    @GetMapping("test")
+    public String test() {
+        return "hello";
+    }
 }

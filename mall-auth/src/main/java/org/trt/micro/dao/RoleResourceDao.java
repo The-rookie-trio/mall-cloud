@@ -17,6 +17,6 @@ public interface RoleResourceDao {
      *
      * @return list
      */
-    List<RoleResourceDTO> roleResource();
+    List<RoleResourceDTO> roleResources();
 
 }

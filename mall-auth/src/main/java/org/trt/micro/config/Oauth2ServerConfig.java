@@ -63,7 +63,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         clientDetailsServiceConfigurer.inMemory()
                 .withClient(AuthConstant.ADMIN_CLIENT_ID)
                 .secret(passwordEncoder.encode(AuthConstant.KEY_PAIR_PWD))
-                .authorizedGrantTypes("password", "refresh_token")
+                .authorizedGrantTypes("authorization_code", "refresh_token", "password")
                 .scopes("all")
                 .accessTokenValiditySeconds(3600 * 24)
                 .refreshTokenValiditySeconds(3600 * 24 * 7)

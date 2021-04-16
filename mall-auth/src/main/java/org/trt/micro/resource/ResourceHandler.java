@@ -32,7 +32,7 @@ public class ResourceHandler {
     @PostConstruct
     public void initResource() {
         log.info("初始化权限资源信息");
-        List<RoleResourceDTO> roleResource = roleResourceDao.roleResource();
+        List<RoleResourceDTO> roleResource = roleResourceDao.roleResources();
 
         // 将查出的角色资源按资源名称分组， 一个资源对应多个角色
         Map<String, List<RoleResourceDTO>> collect = roleResource.stream().collect(Collectors.groupingBy(RoleResourceDTO::getResource));

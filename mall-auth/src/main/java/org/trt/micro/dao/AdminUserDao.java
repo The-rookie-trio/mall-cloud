@@ -1,5 +1,6 @@
 package org.trt.micro.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.trt.micro.bean.UserInfo;
 import org.trt.micro.dto.UserDTO;
 
@@ -15,6 +16,6 @@ public interface AdminUserDao {
      * @param username 用户名
      * @return UserInfo
      */
-    UserDTO loadByUsername(String username);
+    UserDTO loadByUsername(@Param("username") String username);
 
 }

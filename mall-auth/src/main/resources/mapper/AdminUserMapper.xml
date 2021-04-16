@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.trt.micro.dao.AdminUserDao">
+
+    <resultMap id="userInfoMap" type="org.trt.micro.dto.UserDTO">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="client_id" property="clientId"/>
+        <result column="password" property="password"/>
+        <result column="status" property="status"/>
+        <collection property="roles" ofType="java.lang.String">
+            <result column="role" javaType="java.lang.String"/>
+        </collection>
+    </resultMap>
+
+    <select id="loadByUsername" resultMap="userInfoMap">
+        SELECT
+            mu.id, mu.username, mu.client_id, mu.`password`, mu.`status`, mr.role
+        FROM
+            mall_user mu
+        RIGHT JOIN
+            mall_user_role mur on mu.id = mur.user_id
+        LEFT JOIN
+            mall_role mr on mur.role_id = mr.id
+        where
+            mu.username = #{username};
+    </select>
+
+</mapper>

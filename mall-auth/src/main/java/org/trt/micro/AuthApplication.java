@@ -3,6 +3,7 @@ package org.trt.micro;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * @author <a href="exphuhong@163.com">胡红</a>
@@ -10,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description 认证授权启动类
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"org.trt.micro.dao", "org.trt.micro.mapper"})
+@MapperScan("org.trt.micro.dao")
 public class AuthApplication {
 
     public static void main(String[] args) {

@@ -66,7 +66,7 @@ public class DaoUserDetailsService implements UserDetailsService {
             throw new BusinessException(HttpStatus.FORBIDDEN.value(), "登录用户账号不可用");
         }
         // 判断用户账号信息  是否被锁等
-        log.info("用户认证成功:[{}]", username);
+        log.info("用户查询成功:[{}]", username);
         return userInfo;
     }
 

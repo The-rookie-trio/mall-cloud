@@ -23,5 +23,14 @@ public interface AuthConstant {
      */
     String KEY_PAIR_PWD = "123456";
 
+    /**
+     * redis保存角色和资源
+     */
     String ROLES_RESOURCE_MAP = "roles_resource_map";
+
+    /**
+     * JWT令牌前缀
+     */
+    String JWT_TOKEN_PREFIX = "Bearer ";
+
 }

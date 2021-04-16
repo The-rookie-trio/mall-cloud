@@ -1,6 +1,6 @@
 package com.hujingli.micro.command;
 
-import com.hujingli.micro.common.rest.response.BaseResponse;
+import org.trt.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.service.StockServiceFeign;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;

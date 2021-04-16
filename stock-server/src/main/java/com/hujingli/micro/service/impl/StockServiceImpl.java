@@ -1,7 +1,7 @@
 package com.hujingli.micro.service.impl;
 
-import com.hujingli.micro.common.bean.Stock;
-import com.hujingli.micro.common.exception.BusinessException;
+import org.trt.micro.common.bean.Stock;
+import org.trt.micro.common.exception.BusinessException;
 import com.hujingli.micro.dao.StockRepository;
 import com.hujingli.micro.request.MinusStockRequest;
 import com.hujingli.micro.service.StockService;

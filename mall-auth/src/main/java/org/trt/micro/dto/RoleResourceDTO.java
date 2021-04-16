@@ -23,8 +23,5 @@ public class RoleResourceDTO {
      */
     private String role;
 
-    public String collectionRole() {
-        return this.role;
-    }
 
 }

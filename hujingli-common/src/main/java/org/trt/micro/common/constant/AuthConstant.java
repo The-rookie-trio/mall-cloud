@@ -1,4 +1,4 @@
-package com.hujingli.micro.common.constant;
+package org.trt.micro.common.constant;
 
 /**
  * @author <a href="exphuhong@163.com">胡红</a>

@@ -1,4 +1,4 @@
-package com.hujingli.micro.common.exception;
+package org.trt.micro.common.exception;
 
 /**
  * @author exphuhong

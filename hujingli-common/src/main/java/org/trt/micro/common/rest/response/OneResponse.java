@@ -1,4 +1,4 @@
-package com.hujingli.micro.common.rest.response;
+package org.trt.micro.common.rest.response;
 
 /**
  * @author exphuhong

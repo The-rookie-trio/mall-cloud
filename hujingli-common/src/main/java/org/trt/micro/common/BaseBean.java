@@ -1,4 +1,4 @@
-package com.hujingli.micro.common;
+package org.trt.micro.common;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,7 +1,7 @@
 package org.trt.micro.auth;
 
-import com.hujingli.micro.common.constant.AuthConstant;
-import com.hujingli.micro.common.exception.BusinessException;
+import org.trt.micro.common.constant.AuthConstant;
+import org.trt.micro.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

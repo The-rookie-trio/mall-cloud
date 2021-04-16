@@ -1,6 +1,6 @@
-package com.hujingli.micro.common.bean;
+package org.trt.micro.common.bean;
 
-import com.hujingli.micro.common.BaseBean;
+import org.trt.micro.common.BaseBean;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

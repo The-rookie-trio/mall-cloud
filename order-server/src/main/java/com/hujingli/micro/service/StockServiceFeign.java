@@ -1,6 +1,6 @@
 package com.hujingli.micro.service;
 
-import com.hujingli.micro.common.rest.response.BaseResponse;
+import org.trt.micro.common.rest.response.BaseResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

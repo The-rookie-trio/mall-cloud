@@ -1,6 +1,6 @@
-package com.hujingli.micro.common.exception;
+package org.trt.micro.common.exception;
 
-import com.hujingli.micro.common.rest.response.OneResponse;
+import org.trt.micro.common.rest.response.OneResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

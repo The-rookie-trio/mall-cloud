@@ -1,6 +1,6 @@
 package org.trt.micro.resource;
 
-import com.hujingli.micro.common.constant.AuthConstant;
+import org.trt.micro.common.constant.AuthConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -9,6 +9,7 @@ import org.trt.micro.dao.RoleResourceDao;
 import org.trt.micro.dto.RoleResourceDTO;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,7 +32,8 @@ public class ResourceHandler {
     @PostConstruct
     public void initResource() {
         log.info("初始化权限资源信息");
-        List<RoleResourceDTO> roleResource = roleResourceDao.getRoleResource();
+//        List<RoleResourceDTO> roleResource = roleResourceDao.getRoleResource();
+        List<RoleResourceDTO> roleResource = new ArrayList<>();
 
         // 将查出的角色资源按资源名称分组， 一个资源对应多个角色
         Map<String, List<RoleResourceDTO>> collect = roleResource.stream().collect(Collectors.groupingBy(RoleResourceDTO::getResource));

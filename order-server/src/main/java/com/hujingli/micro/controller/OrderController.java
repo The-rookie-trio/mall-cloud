@@ -1,7 +1,7 @@
 package com.hujingli.micro.controller;
 
-import com.hujingli.micro.common.rest.BaseController;
-import com.hujingli.micro.common.rest.response.BaseResponse;
+import org.trt.micro.common.rest.BaseController;
+import org.trt.micro.common.rest.response.BaseResponse;
 import com.hujingli.micro.request.SaveOrderRequest;
 import com.hujingli.micro.service.OrderService;
 import io.swagger.annotations.*;

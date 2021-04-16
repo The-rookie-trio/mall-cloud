@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description 认证授权启动类
  */
 @SpringBootApplication
-@MapperScan("org.trt.micro.dao")
+@MapperScan(basePackages = {"org.trt.micro.dao", "org.trt.micro.mapper"})
 public class AuthApplication {
 
     public static void main(String[] args) {

@@ -1,5 +1,6 @@
 package org.trt.micro.dao;
 
+import org.apache.ibatis.annotations.Flush;
 import org.trt.micro.dto.RoleResourceDTO;
 
 import java.util.List;
@@ -16,6 +17,6 @@ public interface RoleResourceDao {
      *
      * @return list
      */
-    List<RoleResourceDTO> getRoleResource();
+    List<RoleResourceDTO> roleResource();
 
 }

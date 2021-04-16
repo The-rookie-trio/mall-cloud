@@ -5,5 +5,15 @@
 
 <mapper namespace="org.trt.micro.dao.RoleResourceDao">
 
+    <resultMap id="role_resource_map" type="org.trt.micro.dto.RoleResourceDTO">
+        <result property="role" column="role"/>
+        <result property="resource" column="resource"/>
+    </resultMap>
+
+    <select id="roleResource" resultMap="role_resource_map">
+        SELECT mro.role as role, mre.resource as resource FROM mall_role_resource mrr LEFT JOIN mall_role mro on
+        mrr.role_id = mro.id
+        LEFT JOIN mall_resource mre on mrr.resource_id = mre.id;
+    </select>
 
 </mapper>

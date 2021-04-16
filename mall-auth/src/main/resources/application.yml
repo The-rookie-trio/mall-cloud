@@ -7,13 +7,9 @@ spring:
     username: mall
     password: pa2sw0rd
   profiles:
-      active: dev
+      active: dev
   application:
       name: mall-auth
-  cloud:
-    nacos:
-      discovery:
-          server-addr: http://1.116.200.39:8848
   jackson:
       date-format: yyyy-MM-dd HH:mm:ss
   redis:

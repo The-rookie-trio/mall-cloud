@@ -10,6 +10,7 @@ import org.trt.micro.dto.RoleResourceDTO;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -36,8 +37,12 @@ public class ResourceHandler {
 
         // 将查出的角色资源按资源名称分组， 一个资源对应多个角色
         Map<String, List<RoleResourceDTO>> collect = roleResource.stream().collect(Collectors.groupingBy(RoleResourceDTO::getResource));
-
-        redisTemplate.opsForHash().putAll(AuthConstant.ROLES_RESOURCE_MAP, collect);
+        Map<String, List<String>> resourceMap = new HashMap<>();
+        collect.forEach((k,v)->{
+            List<String> resource = v.stream().map(RoleResourceDTO::getRole).collect(Collectors.toList());
+            resourceMap.put(k, resource);
+        });
+        redisTemplate.opsForHash().putAll(AuthConstant.ROLES_RESOURCE_MAP, resourceMap);
 
         log.info("完成初始化权限资源信息");
 

@@ -16,6 +16,7 @@
         <module>config-server</module>
         <module>hujingli-zuul</module>
         <module>mall-auth</module>
+        <module>mall-gateway</module>
     </modules>
 
 

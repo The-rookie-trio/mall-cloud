@@ -1,0 +1,41 @@
+server:
+    port: 10002
+spring:
+  redis:
+    host: 39.108.149.230
+    database: 0
+    port: 6379
+    password: CPC@2021
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.12.2.202:3306/mall?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: mall
+    password: pa2sw0rd
+  application:
+    name: mall-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:10002/mall-auth/rsa/publicKey'
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: mall-auth
+          uri: lb://mall-auth
+          predicates:
+            - Path=/mall-auth/**
+          filters:
+            - StripPrefix=1
+  main:
+    allow-bean-definition-overriding: true
+
+secure:
+  ignore:
+    urls:
+      - "/mall-auth/rsa/publicKey"
+      - "/mall-auth/oauth/token"

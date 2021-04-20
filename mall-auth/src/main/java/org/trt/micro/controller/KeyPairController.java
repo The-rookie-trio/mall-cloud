@@ -2,6 +2,7 @@ package org.trt.micro.controller;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.Map;
  * @Date 2021 年 04 月 15 日
  * @Description 获取RSA公钥接口
  */
+@Slf4j
 @RestController
 public class KeyPairController {
 
@@ -29,6 +31,7 @@ public class KeyPairController {
      */
     @GetMapping("/rsa/publicKey")
     public Map<String, Object> getKey() {
+        log.info("获取jwt公钥");
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         RSAKey key = new RSAKey.Builder(publicKey).build();
         return new JWKSet(key).toJSONObject();

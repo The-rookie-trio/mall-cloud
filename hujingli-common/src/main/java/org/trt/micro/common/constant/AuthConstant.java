@@ -29,8 +29,18 @@ public interface AuthConstant {
     String ROLES_RESOURCE_MAP = "roles_resource_map";
 
     /**
+     * token head前缀
+     */
+    String JWT_TOKEN_HEADER = "Authorization";
+
+    /**
      * JWT令牌前缀
      */
     String JWT_TOKEN_PREFIX = "Bearer ";
+
+    /**
+     * 用户信息前缀
+     */
+    String JWT_TOKEN_USER_PREFIX = "user";
 
 }

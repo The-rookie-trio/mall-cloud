@@ -29,11 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/rsa/publicKey","/oauth/**", "/login/**", "/logout/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated()
-
-                .and()
-                .formLogin()//.httpBasic();
-                .permitAll();;
+                .authenticated();
     }
 
     @Bean

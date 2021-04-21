@@ -1,5 +1,6 @@
 package org.trt.micro.resource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.trt.micro.common.constant.AuthConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

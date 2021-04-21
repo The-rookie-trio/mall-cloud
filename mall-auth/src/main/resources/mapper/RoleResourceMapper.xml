@@ -12,9 +12,17 @@
 
 
     <select id="roleResources" resultMap="role_resource_map">
-        SELECT mro.role as role, mre.resource as resource FROM mall_role_resource mrr LEFT JOIN mall_role mro on
-        mrr.role_id = mro.id
-        LEFT JOIN mall_resource mre on mrr.resource_id = mre.id;
+        SELECT mro.role as role, mre.resource as resource
+        FROM
+        mall_resource mre
+        LEFT JOIN
+        mall_role_resource mrr
+        on
+        mrr.resource_id = mre.id
+        left	JOIN
+        mall_role	mro
+        on
+        mrr.role_id = mro.id;
     </select>
 
 </mapper>

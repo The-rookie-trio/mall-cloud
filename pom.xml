@@ -25,6 +25,9 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <admin-starter-server.version>2.3.9.RELEASE</admin-starter-server.version>
+        <admin-starter-client.version>2.1.0</admin-starter-client.version>
+        <admin-starter-actuator.version>2.3.0.RELEASE</admin-starter-actuator.version>
         <jjwt.version>0.9.0</jjwt.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
     </properties>
@@ -85,6 +88,18 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${admin-starter-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${admin-starter-actuator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${admin-starter-client.version}</version>
             </dependency>
 
             <!--JWT(Json Web Token)登录支持-->

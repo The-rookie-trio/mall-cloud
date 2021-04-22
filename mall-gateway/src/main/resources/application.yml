@@ -34,6 +34,14 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  zipkin:
+    enabled: true
+    base-url: 'http://39.108.149.230:9411'
+  sleuth:
+    sampler:
+      probability: 1
+      rate: 10
+
 secure:
   ignore:
     urls:

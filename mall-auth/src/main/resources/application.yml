@@ -17,8 +17,14 @@ spring:
     admin:
       client:
         url: http://1.116.200.39:8059
-
-
+  zipkin:
+    enabled: true
+    discovery-client-enabled: true
+    base-url: 'http://39.108.149.230:9411'
+  sleuth:
+    sampler:
+      probability: 1
+      rate: 10
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
 

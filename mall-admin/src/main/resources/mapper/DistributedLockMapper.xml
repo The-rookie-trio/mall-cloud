@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.trt.micro.distributelock.mysql.dao.DistributedLockDao">
+
+    <select id="getDistributedLock" resultType="org.trt.micro.distributelock.mysql.bean.DistributedLock">
+        SELECT
+        T.*
+        FROM
+        t_sys_distributedlock T
+        <where>
+            <if test="moduleCode != null">
+                AND T.module_code = #{moduleCode}
+            </if>
+        </where>
+
+        for update
+    </select>
+
+</mapper>
